@@ -29,8 +29,7 @@ jobs:
       - name: Generating coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          skip-step: all
-          coverage-file: ./coverage/coverage-final.json
+          skip-step: install
 
       - name: Running the build
         run: |
