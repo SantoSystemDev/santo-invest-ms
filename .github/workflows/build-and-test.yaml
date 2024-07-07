@@ -30,6 +30,7 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           skip-step: all
+          working-directory: ./coverage
 
       - name: Running the build
         run: |
