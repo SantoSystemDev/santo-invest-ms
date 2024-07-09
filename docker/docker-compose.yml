@@ -4,10 +4,15 @@ services:
     container_name: santo-invest-database
     image: mongo:latest
     ports:
-      - "27017:27017"
+      - "5017:27017"
     volumes:
       - mongodb-data:/data/db
       - mongodb-configdb:/data/configdb
+    environment:
+      TZ: America/Sao_Paulo
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ## mongodb://root:example@localhost:5017/
 
 volumes:
   mongodb-data:

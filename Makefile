@@ -40,9 +40,7 @@ stop: ##@DOCKER Stop the development environment
 stop-v: ##@DOCKER Stop the development environment and clean up volumes
 	docker compose -f docker/docker-compose.yml -p santo-invest down --volumes
 
-docker-refresh: ##@DOCKER Stop the development environment with clean up volumes and start the development environment
-	- stop-v
-	- start
+docker-refresh: stop-v start ##@DOCKER Stop the development environment with clean up volumes and start the development environment
 
 ###################################################################################################
 ## HELP
