@@ -1,0 +1,15 @@
+version: "3"
+services:
+  database:
+    container_name: santo-invest-database
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+      - mongodb-configdb:/data/configdb
+
+volumes:
+  mongodb-data:
+  mongodb-configdb:
+  redis-data:
