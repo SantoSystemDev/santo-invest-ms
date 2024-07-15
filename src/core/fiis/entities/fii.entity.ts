@@ -6,11 +6,15 @@ export class FiiEntity extends Entity {
     super();
   }
 
-  async create(entity: FiiEntity): Promise<FiiEntity | ValidationError[]> {
+  static async create(entity: FiiEntity): Promise<FiiEntity> {
     Object.assign(this, entity);
     Object.freeze(this);
 
-    return (await validate(entity)) || entity;
+    const erros: ValidationError[] = await validate(entity);
+
+    if (erros.length > 0) throw new Error('FII_INVALID');
+
+    return entity;
   }
 
   @IsNotEmpty()
