@@ -15,9 +15,9 @@ setup: ##@DEV Generate the .env file
 	cp .env.example .env
 
 clean: ##@DEV Remove ./dist, ./coverage and ./node_modules
+	- rm -rf node_modules
 	- rm -rf dist
 	- rm -rf coverage
-	- rm -rf node_modules
 
 refresh: clean ##@DEV Run the clean step and install dependencies
 	- npm i
