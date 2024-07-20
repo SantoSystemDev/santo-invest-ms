@@ -1,5 +1,5 @@
 import { LocalInjectable } from '@shared/decorators';
-import { FiiCreateRequestDto, FiiResponseDto } from '@shared/dtos/fiis';
+import { FiiCreateRequestDto, FiiResponseDto } from '@shared/dtos/fii';
 import { Mapper } from 'src/core/base';
 import { FiiEntity } from '../entities';
 

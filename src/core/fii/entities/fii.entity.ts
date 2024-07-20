@@ -12,7 +12,7 @@ export class FiiEntity extends Entity {
 
     const erros: ValidationError[] = await validate(entity);
 
-    if (erros.length > 0) throw new Error('FII_INVALID');
+    if (erros.length > 0) throw new Error('INVALID_FII');
 
     return entity;
   }
