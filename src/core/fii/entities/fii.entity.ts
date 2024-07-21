@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsNumber, validate, ValidationError } from 'class-validator';
-import { Entity } from 'src/core/base';
+import { Entity } from '../../base';
 
 export class FiiEntity extends Entity {
   private constructor() {
