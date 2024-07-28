@@ -54,7 +54,7 @@ export class CacheMemoryRepository<TEntity extends Entity> extends Repository<TE
   }
 
   public async getOne(filter: Partial<TEntity>): Promise<TEntity> {
-    return this.getMany(filter).then(items => (items.length > 0 ? items[0] : null));
+    return this.getMany(filter).then(items => (items.length > 0 ? items[0] : undefined));
   }
 
   public async getMany(filter: Partial<TEntity>): Promise<TEntity[]> {

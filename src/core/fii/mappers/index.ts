@@ -1,1 +1,1 @@
-export * from './fii-create.mapper';
+export * from './fii.mapper';

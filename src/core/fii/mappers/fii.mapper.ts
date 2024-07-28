@@ -2,12 +2,12 @@ import { FiiCreateRequestDto, FiiResponseDto } from '@shared/dtos/fii';
 import { Mapper } from '../../base';
 import { FiiEntity } from '../entities';
 
-export class FiiCreateMapper implements Mapper<FiiCreateRequestDto, FiiResponseDto, FiiEntity> {
-  async mapEntityFromDto(dto: FiiCreateRequestDto): Promise<FiiEntity> {
+export class FiiMapper implements Mapper<FiiCreateRequestDto, FiiResponseDto, FiiEntity> {
+  async toEntity(dto: FiiCreateRequestDto): Promise<FiiEntity> {
     return await FiiEntity.create({ ...dto });
   }
 
-  mapEntityToDto(entity: FiiEntity): FiiResponseDto {
+  toDto(entity: FiiEntity): FiiResponseDto {
     const { id } = entity;
     return new FiiResponseDto({ id, ...entity });
   }
